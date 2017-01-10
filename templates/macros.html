@@ -5,4 +5,5 @@
     <a href="{{ url_for(endpoint) }}">{{name}}</a>
 {% endif %}
 {% endmacro %}
-
+<!-- Here, you’re using Flask’s request object, which is part of Jinja by default, to check whether the link points to the current page. 
+If so then you'll add the active class to the <a> tag. -->

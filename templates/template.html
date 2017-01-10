@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
     <head>
         <title>Flask Template Example</title>
@@ -19,29 +18,28 @@
         </style>
     </head>
     <body>
-
         <div id="main">
             {% extends "base.html" %}
 
             {% block content %}
-                <h3> This is the start of my child template</h3>
+                <h3> This is the start of the template.html file </h3>
                 <br>
                 <p>My string: {{my_string}}</p>
                 <p>Value from the list: {{my_list[3]}}</p>
+                <p>Same list with a filter: {{ my_list|join(', ') }}</p>
                 <p>Loop through the list:</p>
                 <ul>
                     {% for n in my_list %}
                     <li>{{n}}</li>
                     {% endfor %}
                 </ul>
-                 <p>Same list with a filter: {{ my_list|join(', ') }}</p>
-                <h3> This is the end of my child template</h3>
-                <h4>Current date/time: {{ current_time | datetimefilter }}</h4>                
-             {% endblock %}   
+                <h3> This is the end of the template.html file </h3>
+                <h4>Current date/time: {{ current_time | datetimefilter }}</h4>
+            {% endblock %}
         </div>
     </body>
     {% block footer %}
     {{super()}}
-    ...and this addition to the footer is coming from the child template.
+    ....and this addition to the footer is coming from the template.html file
     {% endblock %}
 </html>
